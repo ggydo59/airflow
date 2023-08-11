@@ -9,3 +9,10 @@ def regist(name, sex, *args):
     city = args[1] if len(args) >=1 else None
     print(f"country = {country}")
     print(f"city={city}")
+    
+    
+def regist2(name, sex, *args, **kwargs):
+    print(f"name = {name}")
+    print(f"sex = {sex}")
+    print(f"args = {args}")
+    print(f"kwargs = {kwargs}")
