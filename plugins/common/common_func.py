@@ -15,4 +15,4 @@ def regist2(name, sex, *args, **kwargs):
     print(f"name = {name}")
     print(f"sex = {sex}")
     print(f"args = {args}")
-    print(f"kwargs = {kwargs}")
+    print(f"kwargs = {kwargs.get()}")
