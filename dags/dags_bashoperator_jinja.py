@@ -1,6 +1,5 @@
 from airflow import DAG
 import pendulum
-import datetime
 from airflow.operators.bash import BashOperator
 from common.common_func import regist2
 
@@ -20,8 +19,8 @@ with DAG (
     bash_t2 = BashOperator(
         task_id = 'bash_t2',
         env={
-            'START_DATE': '{{data_interval_start | ds}}',
-            'END_DATE' : ' {{data_interval_end | ds}}'
+            "START_DATE": "{{data_interval_start | ds}}",
+            "END_DATE" : "{{data_interval_end | ds}}"
         },
         bash_command='echo $START_DATE && ehcho $END_DATE'
     )
