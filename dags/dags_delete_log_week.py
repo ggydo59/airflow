@@ -16,6 +16,9 @@ with DAG(
        
     delete_log_week = BashOperator(
         task_id ="delete_log_week",
-        bash_command="find $AIRFLOW_HOME/logs -type f -mtime +7 -delete",
+        bash_command="""
+        find $AIRFLOW_HOME/logs -type f -mtime +7 -delete 
+        && find $AIRFLOW_HOME/logs -type d -empty -delete
+        """,
     )
     
